@@ -1,0 +1,204 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+      overflow: hidden;
+  }
+
+  /* FIX ONLY RESPONSIVENESS */
+  .calculator {
+      position: relative;
+      width: 430px;
+      max-width: 95vw;
+      /* ✅ responsive fix */
+      padding: 25px;
+      /* ❌ removed 250px bug */
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow:
+          0 0 40px rgba(0, 0, 0, 0.5),
+          inset 0 0 10px rgba(255, 255, 255, 0.05);
+      z-index: 10;
+  }
+
+  /* keep your design */
+  .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      color: white;
+  }
+
+  .top-bar h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+  }
+
+  .theme-btn {
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: #1e293b;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+  }
+
+  .theme-btn:hover {
+      transform: rotate(180deg);
+      background: #334155;
+  }
+
+  .screen {
+      background: #020617;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+  }
+
+  .input-screen {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 22px;
+      text-align: right;
+      margin-bottom: 10px;
+  }
+
+
+  .output-screen {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 42px;
+      text-align: right;
+      font-weight: bold;
+  }
+
+  .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+  }
+
+  button {
+      height: 65px;
+      border: none;
+      border-radius: 18px;
+      font-size: 20px;
+      cursor: pointer;
+      background: #0f172a;
+      color: white;
+      transition: 0.3s;
+      box-shadow:
+          0 5px 10px rgba(0, 0, 0, 0.4),
+          inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  button:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: #1e293b;
+  }
+
+  button:active {
+      transform: scale(0.95);
+  }
+
+  .operator {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+  }
+
+  .equal {
+      background: linear-gradient(135deg, #22c55e, #15803d);
+      grid-column: span 2;
+  }
+
+  .clear {
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+  }
+
+  .special {
+      background: #312e81;
+  }
+
+  /* HISTORY */
+  .history-box {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 15px;
+      max-height: 120px;
+      overflow-y: auto;
+      color: white;
+  }
+
+  /* LIGHT MODE (unchanged) */
+  .hashim {
+      background: linear-gradient(135deg, #dbeafe, #e0f2fe, #f8fafc);
+  }
+
+  .hashim .calculator {
+      background: rgba(255, 255, 255, 0.7);
+  }
+
+  .hashim .screen {
+      background: #f1f5f9;
+  }
+
+  .hashim .input-screen {
+      color: #475569;
+  }
+
+  .hashim .output-screen {
+      color: #020617;
+  }
+
+  .hashim button {
+      background: #e2e8f0;
+      color: #020617;
+  }
+
+  .hashim .history-box {
+      background: rgba(255, 255, 255, 0.6);
+      color: black;
+  }
+
+  /* ONLY RESPONSIVE FIX */
+  @media(max-width:500px) {
+
+      .calculator {
+          width: 95%;
+          padding: 15px;
+      }
+
+      button {
+          height: 58px;
+          font-size: 17px;
+      }
+
+      .output-screen {
+          font-size: 32px;
+      }
+
+      .input-screen {
+          font-size: 18px;
+      }
